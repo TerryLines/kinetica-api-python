@@ -59,7 +59,7 @@ except:
 
     # Search for our modules first, probably don't need imp or virt envs.
     if not gpudb_module_path + "/packages" in sys.path :
-        sys.path.insert(1, gpudb_module_path + "/packages")
+        sys.path.insert(len(sys.path), GPUDB_MODULE_PATH + "/packages")
 
     # pure python implementation
     import pymmh3 as mmh3

@@ -66,9 +66,9 @@ GPUDB_MODULE_PATH = os.path.dirname(os.path.abspath(GPUDB_MODULE_PATH))
 
 # Search for our modules first, probably don't need imp or virt envs.
 if not GPUDB_MODULE_PATH in sys.path :
-    sys.path.insert(1, GPUDB_MODULE_PATH)
+    sys.path.insert(len(sys.path), GPUDB_MODULE_PATH)
 if not GPUDB_MODULE_PATH + "/packages" in sys.path :
-    sys.path.insert(1, GPUDB_MODULE_PATH + "/packages")
+    sys.path.insert(len(sys.path), GPUDB_MODULE_PATH + "/packages")
 
 
 # ---------------------------------------------------------------------------
@@ -36590,14 +36590,14 @@ if IS_PYTHON_3:
         from gpudb.gpudb import GPUdbIngestor, RecordRetriever
     except:
         if GPUDB_MODULE_PATH not in sys.path :
-            sys.path.insert(1, GPUDB_MODULE_PATH)
+            sys.path.insert(len(sys.path), GPUDB_MODULE_PATH)
         from gpudb_multihead_io import GPUdbIngestor, RecordRetriever
 else:
     try:
         from gpudb import GPUdbIngestor, RecordRetriever
     except:
         if GPUDB_MODULE_PATH not in sys.path :
-            sys.path.insert(1, GPUDB_MODULE_PATH)
+            sys.path.insert(len(sys.path), GPUDB_MODULE_PATH)
         from gpudb_multihead_io import GPUdbIngestor, RecordRetriever
 # done importing GPUdbIngestor
 

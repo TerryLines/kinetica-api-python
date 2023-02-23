@@ -44,9 +44,9 @@ gpudb_module_path = os.path.dirname(os.path.abspath(gpudb_module_path))
 
 # Search for our modules first, probably don't need imp or virt envs.
 if not gpudb_module_path in sys.path:
-    sys.path.insert(1, gpudb_module_path)
+    sys.path.insert(len(sys.path), GPUDB_MODULE_PATH)
 if not gpudb_module_path + "/packages" in sys.path:
-    sys.path.insert(1, gpudb_module_path + "/packages")
+    sys.path.insert(len(sys.path), GPUDB_MODULE_PATH + "/packages")
 
 from protocol import RecordType
 
